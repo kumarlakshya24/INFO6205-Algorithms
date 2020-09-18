@@ -1,30 +1,47 @@
 package edu.northeastern.lakshya;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
-public class IsPermutation {
-  public static void main(String[] args) {
-    int[] twoSumsArray = {1, 3, 4, 2, 6, 5, 8, 7};
-    System.out.println(TwoSums(twoSumsArray, 10));
-  }
+public class IsPermutation {public static void main(String[] args) {
+  // write your code here
+}
 
-  private static int[] TwoSums(int[] nums, int target) {
-    Arrays.sort(nums);
-    int leftIndex = 0;
-    int rightIndex = nums.length - 1;
-    while (leftIndex < rightIndex) {
-      if (nums.length == 0) {
-        return nums;
+  private static boolean isPermut(String str1, String str2){
+    if(str1.length() != str2.length()){
+      return  false;
+    }
+    HashMap<Character, Integer> map1 = new HashMap<>();
+    HashMap<Character, Integer> map2 = new HashMap<>();
+
+    for(int i = 0 ; i < str1.length() ; i ++){
+      if( map1.containsKey(str1.charAt(i) ) ) {
+        map1.put( str1.charAt(i), map1.get(str1.charAt(i)) + 1 );
+      }else{
+        map1.put( str1.charAt(i), 1 );
       }
-      if (nums[leftIndex] + nums[rightIndex] > target) {
-        leftIndex++;
-      } else {
-        rightIndex--;
-      }
-      if (nums[leftIndex] + nums[rightIndex] == target) {
-        return new int[]{nums[leftIndex], nums[rightIndex]};
+
+      if( map2.containsKey(str2.charAt(i) ) ) {
+        map2.put( str2.charAt(i), map2.get(str2.charAt(i)) + 1 );
+      }else{
+        map2.put( str2.charAt(i), 1 );
       }
     }
-    return new int[]{};
+
+    for(int i = 0 ; i < str1.length(); i ++){
+      Character ch = str1.charAt(i);
+
+      if(!map2.containsKey(ch)){
+        return  false;
+      }
+      if(map1.get(ch) != map2.get(ch)){
+        return  false;
+      }
+    }
+
+    return true;
+
+
+
   }
 }

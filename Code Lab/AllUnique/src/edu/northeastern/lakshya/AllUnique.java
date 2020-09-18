@@ -1,30 +1,24 @@
 package edu.northeastern.lakshya;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class AllUnique {
   public static void main(String[] args) {
-    int[] twoSumsArray = {1, 3, 4, 2, 6, 5, 8, 7};
-    System.out.println(TwoSums(twoSumsArray, 10));
   }
 
-  private static int[] TwoSums(int[] nums, int target) {
-    Arrays.sort(nums);
-    int leftIndex = 0;
-    int rightIndex = nums.length - 1;
-    while (leftIndex < rightIndex) {
-      if (nums.length == 0) {
-        return nums;
-      }
-      if (nums[leftIndex] + nums[rightIndex] > target) {
-        leftIndex++;
-      } else {
-        rightIndex--;
-      }
-      if (nums[leftIndex] + nums[rightIndex] == target) {
-        return new int[]{nums[leftIndex], nums[rightIndex]};
-      }
+  private static boolean allUniq(int[] arr){
+    if(arr == null || arr.length <=1){
+      return true;
     }
-    return new int[]{};
+    HashSet<Integer> set = new HashSet<Integer>();
+
+    for (int i : arr) {
+      if (set.contains(i)){
+        return false;
+      }
+      set.add(i);
+    }
+    return  true;
   }
 }

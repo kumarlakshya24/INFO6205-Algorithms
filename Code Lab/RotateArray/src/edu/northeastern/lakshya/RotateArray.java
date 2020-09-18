@@ -2,29 +2,28 @@ package edu.northeastern.lakshya;
 
 import java.util.Arrays;
 
-public class RotateArray {
-  public static void main(String[] args) {
-    int[] twoSumsArray = {1, 3, 4, 2, 6, 5, 8, 7};
-    System.out.println(TwoSums(twoSumsArray, 10));
+public class RotateArray {public static void main(String[] args) {
+}
+
+  private static void rotateArray(int[] arr, int k){
+    k = k % arr.length;
+
+    reverseArray(arr, 0, arr.length -1);
+    reverseArray(arr, 0, k-1);
+    reverseArray(arr, k, arr.length-1);
   }
 
-  private static int[] TwoSums(int[] nums, int target) {
-    Arrays.sort(nums);
-    int leftIndex = 0;
-    int rightIndex = nums.length - 1;
-    while (leftIndex < rightIndex) {
-      if (nums.length == 0) {
-        return nums;
-      }
-      if (nums[leftIndex] + nums[rightIndex] > target) {
-        leftIndex++;
-      } else {
-        rightIndex--;
-      }
-      if (nums[leftIndex] + nums[rightIndex] == target) {
-        return new int[]{nums[leftIndex], nums[rightIndex]};
-      }
+
+  private static void reverseArray(int[] arr, int start, int end){
+    if(start < 0 || end < 0 || end <= start || start >= arr.length || end >= arr.length ){
+      return;
     }
-    return new int[]{};
+    while(start < end){
+      int temp = arr[start];
+      arr[start] = arr[end];
+      arr[end] = temp;
+      start ++;
+      end --;
+    }
   }
 }
