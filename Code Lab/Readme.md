@@ -1,1 +1,1 @@
-This folder includes the codelab assignments for INFO 6205
+This folder includes the Code Lab for INFO 6205

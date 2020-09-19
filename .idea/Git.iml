@@ -13,6 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Code Lab/RemoveNthFromEnd/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Code Lab/RotateArray/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Code Lab/SumTwoStrings/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Code Lab/AllUnique/utils" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

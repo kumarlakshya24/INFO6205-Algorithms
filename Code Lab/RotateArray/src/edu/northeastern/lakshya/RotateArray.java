@@ -1,18 +1,13 @@
 package edu.northeastern.lakshya;
-
-import java.util.Arrays;
-
 public class RotateArray {public static void main(String[] args) {
 }
 
   private static void rotateArray(int[] arr, int k){
     k = k % arr.length;
-
     reverseArray(arr, 0, arr.length -1);
     reverseArray(arr, 0, k-1);
     reverseArray(arr, k, arr.length-1);
   }
-
 
   private static void reverseArray(int[] arr, int start, int end){
     if(start < 0 || end < 0 || end <= start || start >= arr.length || end >= arr.length ){

@@ -1,30 +1,23 @@
 package edu.northeastern.lakshya;
-
-import java.util.Arrays;
-
 public class PartitionListAroundX {
   public static void main(String[] args) {
-    int[] twoSumsArray = {1, 3, 4, 2, 6, 5, 8, 7};
-    System.out.println(TwoSums(twoSumsArray, 10));
+
   }
 
-  private static int[] TwoSums(int[] nums, int target) {
-    Arrays.sort(nums);
-    int leftIndex = 0;
-    int rightIndex = nums.length - 1;
-    while (leftIndex < rightIndex) {
-      if (nums.length == 0) {
-        return nums;
-      }
-      if (nums[leftIndex] + nums[rightIndex] > target) {
-        leftIndex++;
+  public static ListNode partition(ListNode head, int x) {
+    ListNode lessListHead = new ListNode(0);
+    ListNode greaterListHead = new ListNode(0);
+    ListNode smallListPointer = lessListHead;
+    ListNode biggerListPointer = greaterListHead;
+    for(ListNode current = head; current != null; current = current.next) {
+      if (current.val < x) {
+        smallListPointer = smallListPointer.next = current;
       } else {
-        rightIndex--;
-      }
-      if (nums[leftIndex] + nums[rightIndex] == target) {
-        return new int[]{nums[leftIndex], nums[rightIndex]};
+        biggerListPointer = biggerListPointer.next = current;
       }
     }
-    return new int[]{};
-  }
+      biggerListPointer.next = null;
+      smallListPointer.next = greaterListHead.next;
+      return lessListHead.next;
+    }
 }

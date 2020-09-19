@@ -4,10 +4,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class IsPermutation {public static void main(String[] args) {
-  // write your code here
+  System.out.println(checkInclusion("abc","cba"));
+  System.out.println(checkInclusion("abc","cbv"));
+  System.out.println(checkInclusion("abc","cbaa"));
+  System.out.println(checkInclusion("abcc","cbaa"));
 }
 
-  private static boolean isPermut(String str1, String str2){
+  private static boolean checkInclusion(String str1, String str2){
     if(str1.length() != str2.length()){
       return  false;
     }
@@ -34,7 +37,7 @@ public class IsPermutation {public static void main(String[] args) {
       if(!map2.containsKey(ch)){
         return  false;
       }
-      if(map1.get(ch) != map2.get(ch)){
+      if(!map1.get(ch).equals(map2.get(ch))){
         return  false;
       }
     }

@@ -1,30 +1,28 @@
 package edu.northeastern.lakshya;
-
-import java.util.Arrays;
-
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 public class RemoveDuplicates {
   public static void main(String[] args) {
-    int[] twoSumsArray = {1, 3, 4, 2, 6, 5, 8, 7};
-    System.out.println(TwoSums(twoSumsArray, 10));
-  }
 
-  private static int[] TwoSums(int[] nums, int target) {
-    Arrays.sort(nums);
-    int leftIndex = 0;
-    int rightIndex = nums.length - 1;
-    while (leftIndex < rightIndex) {
-      if (nums.length == 0) {
-        return nums;
+  }
+  public ListNode deleteDuplicates(ListNode head) {
+    ListNode current = head;
+    while(current != null && current.next != null) {
+      if(current.val == current.next.val) {
+        current.next = current.next.next;
       }
-      if (nums[leftIndex] + nums[rightIndex] > target) {
-        leftIndex++;
-      } else {
-        rightIndex--;
-      }
-      if (nums[leftIndex] + nums[rightIndex] == target) {
-        return new int[]{nums[leftIndex], nums[rightIndex]};
+      else {
+        current = current.next;
       }
     }
-    return new int[]{};
+    return head;
   }
 }
