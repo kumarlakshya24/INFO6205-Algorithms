@@ -1,13 +1,9 @@
 package edu.northeastern.lakshya;
-
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class IsPermutation {public static void main(String[] args) {
-  System.out.println(checkInclusion("abc","cba"));
-  System.out.println(checkInclusion("abc","cbv"));
-  System.out.println(checkInclusion("abc","cbaa"));
-  System.out.println(checkInclusion("abcc","cbaa"));
+  System.out.println(checkInclusion("ab","eidbraoao"));
+  System.out.println(checkInclusion("hyu","uyh"));
 }
 
   private static boolean checkInclusion(String str1, String str2){
@@ -41,10 +37,6 @@ public class IsPermutation {public static void main(String[] args) {
         return  false;
       }
     }
-
     return true;
-
-
-
   }
 }

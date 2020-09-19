@@ -1,12 +1,9 @@
 package edu.northeastern.lakshya;
 
 public class SumTwoStrings {
-
   public static void main(String[] args) {
-    System.out.println(sumTwoStrings("523", "32"));
+    System.out.println(sumTwoStrings("100", "50"));
   }
-
-  // Assuming both of them are non negative
   private static int sumTwoStrings(String str1, String str2){
     if(str1.isBlank() || str1.isEmpty() || str2.isBlank() || str2.isEmpty()){
       return  Integer.MIN_VALUE;
@@ -57,13 +54,9 @@ public class SumTwoStrings {
       totalSum += (sum) *  10 ^ exp;
       len2 --;
     }
-
     exp ++;
     totalSum += carry * (int) Math.pow(10, exp);
-
     return totalSum;
 
   }
-
-
 }

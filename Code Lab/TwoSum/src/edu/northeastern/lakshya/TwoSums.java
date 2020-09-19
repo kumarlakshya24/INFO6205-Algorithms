@@ -23,8 +23,6 @@ public class TwoSums {
     }
     return new int[]{};
   }
-
-
 }
 
 

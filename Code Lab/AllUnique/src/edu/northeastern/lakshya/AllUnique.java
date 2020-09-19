@@ -1,5 +1,4 @@
 package edu.northeastern.lakshya;
-/*Is Unique : Implement an algorithm to determine if a string has all unique characters.*/
 import java.util.HashSet;
 import java.util.Set;
 

@@ -3,7 +3,6 @@ public class PartitionListAroundX {
   public static void main(String[] args) {
 
   }
-
   public static ListNode partition(ListNode head, int x) {
     ListNode lessListHead = new ListNode(0);
     ListNode greaterListHead = new ListNode(0);
